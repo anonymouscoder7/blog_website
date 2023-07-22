@@ -49,11 +49,13 @@
                     <?php $i = 0; ?>
                     @foreach($blogs as $blog)
                     <tr>
-                        <th>1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>Otto</td>
+                        <th>{{++$i}}</th>
+                        <td>{{$blog->title}}</td>
+                        <td>{{$blog->description}}</td>
+                        <td>
+                            <img src="{{asset($blog->image)}}" alt="" width="100">
+                        </td>
+                        <td>{{$blog->author}}</td>
                         <td>
                             <a href="" class="btn btn-primary">Edit</a>
                             <a href="" class="btn btn-danger">Delete</a>
