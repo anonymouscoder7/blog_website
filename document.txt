@@ -10,7 +10,9 @@ php artisan optimize (cache clear)
 
 php artisan make:model Blog -mcr (make database and controller)
 
-views/blog/blog.blade.php
-[title,description,author,image]
+https://github.com/anonymouscoder7/blog_website
+
+php artisan migrate:fresh (migrate database changes)
+
 
 

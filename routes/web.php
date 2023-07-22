@@ -14,16 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-Route::get('/test', function () {
-    return view('test.test');
-});
+Route::get('/', [BlogController::class, 'home']);
 
 
 Route::get('/blog', [BlogController::class, 'index']);
+
 Route::post('/save', [BlogController::class, 'store']);
 

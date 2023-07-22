@@ -8,6 +8,9 @@ use Illuminate\Http\Request;
 class BlogController extends Controller
 {
  
+    public function home(){
+        return view('welcome');
+    }
     public function index()
     {
         return view('blog.blog');
@@ -25,7 +28,7 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-        $blog = new Blog();
+        $blog = new Blog(); 
         $blog->title = $request->title;
         $blog->description = $request->description;
         $blog->author = $request->author;
@@ -38,6 +41,8 @@ class BlogController extends Controller
         $blog->save();
         return back();
     }
+
+
 
     /**
      * Display the specified resource.
