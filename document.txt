@@ -1,0 +1,16 @@
+MVC pattern
+M = Model / Database (model=> app/models/..,database => database/migrations/..)
+v = View / Frontend (views => resourses/views/..) 
+C = controller / backend/ functions (controller => app/http/controllers/..)
+R = Route / Path (route => route/web.php)
+
+composer create-project laravel/laravel ProjectName
+php artisan serve (run)
+php artisan optimize (cache clear)
+
+php artisan make:model Blog -mcr (make database and controller)
+
+views/blog/blog.blade.php
+[title,description,author,image]
+
+
