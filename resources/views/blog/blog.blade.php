@@ -19,20 +19,19 @@
         <div class="card p-4">
         <div class="form-control">
             <label for="">Title</label>
-            <input type="text" class="form-control">
+            <input name="title" type="text" class="form-control">
         </div>
-
         <div class="form-control">
             <label for="">Description</label>
-            <textarea name="" id="" cols="30" rows="10" class="form-control"></textarea>
+            <textarea name="description" id="" cols="30" rows="10" class="form-control"></textarea>
         </div>
         <div class="form-control">
             <label for="">Image</label>
-            <input type="file" class="form-control">
+            <input type="file" name="image" class="form-control">
         </div>
         <div class="form-control">
             <label for="">Author</label>
-            <input type="text" class="form-control">
+            <input type="text" name="author" class="form-control">
         </div>
         <div class="form-control">
             <button type="submit" class="btn btn-primary">Submit</button>
