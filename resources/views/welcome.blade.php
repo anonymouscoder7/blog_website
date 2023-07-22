@@ -46,6 +46,8 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php $i = 0; ?>
+                    @foreach($blogs as $blog)
                     <tr>
                         <th>1</th>
                         <td>Mark</td>
@@ -57,6 +59,7 @@
                             <a href="" class="btn btn-danger">Delete</a>
                         </td>
                     </tr>
+                    @endforeach
 
                 </tbody>
             </table>

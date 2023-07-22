@@ -9,14 +9,14 @@ class BlogController extends Controller
 {
  
     public function home(){
-        return view('welcome');
+        $blogs = Blog::all();
+        return view('welcome',compact('blogs'));
     }
     public function index()
     {
         return view('blog.blog');
     }
 
- 
     public function create()
     {
         //
