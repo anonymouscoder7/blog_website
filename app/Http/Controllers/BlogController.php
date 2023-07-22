@@ -24,7 +24,19 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        $blog = new Blog();
+        $blog->title = $request->title;
+        $blog->description = $request->description;
+        $blog->author = $request->author;
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $filename = time().$file->getClientOriginalName();
+            $file->move('image/blog/',$filename);
+            $blog->image = 'image/blog/'. $filename;
+        }
+        $blog->save();
+        return back();
     }
 
     /**

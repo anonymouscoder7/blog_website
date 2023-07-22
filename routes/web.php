@@ -25,3 +25,5 @@ Route::get('/test', function () {
 
 
 Route::get('/blog', [BlogController::class, 'index']);
+Route::post('/save', [BlogController::class, 'store']);
+
