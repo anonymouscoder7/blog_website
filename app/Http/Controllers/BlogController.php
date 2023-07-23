@@ -12,6 +12,11 @@ class BlogController extends Controller
         $blogs = Blog::all();
         return view('welcome',compact('blogs'));
     }
+
+    public function tabel(){
+        $blogs = Blog::all();
+        return view('blog.table',compact('blogs'));
+    }
     public function index()
     {
         return view('blog.blog');
@@ -39,7 +44,7 @@ class BlogController extends Controller
             $blog->image = 'image/blog/'. $filename;
         }
         $blog->save();
-        return redirect('/');
+        return redirect('/table');
     }
 
 
@@ -77,14 +82,16 @@ class BlogController extends Controller
             $blog->image = 'image/blog/'. $filename;
         }
         $blog->update();
-        return redirect('/');
+        return redirect('/table');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Blog $blog)
+    public function destroy($id)
     {
-        //
+        $blog = Blog::find($id);
+        $blog->delete();
+        return back();
     }
 }

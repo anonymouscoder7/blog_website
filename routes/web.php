@@ -16,13 +16,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [BlogController::class, 'home']);
 
-
 Route::get('/blog', [BlogController::class, 'index']);
+
+Route::get('/table', [BlogController::class, 'tabel']);
+
 
 Route::post('/save', [BlogController::class, 'store']);
 
 Route::get('/edit/{id}', [BlogController::class, 'edit']);
 Route::post('/update/{id}', [BlogController::class, 'update']);
+
+Route::get('/delete/{id}', [BlogController::class, 'destroy']);
+
 
 
 

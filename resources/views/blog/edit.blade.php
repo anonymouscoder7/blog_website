@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Damak Model Campus</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,8 +27,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/blog">Add Blog</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/table"> My Blog</a>
+                    </li>
                 </ul>
-
+               
             </div>
         </div>
     </nav>

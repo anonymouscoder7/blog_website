@@ -31,29 +31,45 @@
                         <a class="nav-link" href="/table"> My Blog</a>
                     </li>
                 </ul>
-
+               
             </div>
         </div>
     </nav>
-    <h1 class="text-center p-4">All Blogs !!</h1>
-    <div class="container">
-        <div class="row">
-            @foreach($blogs as $blog)
-            <div class="col">
-                <div class="card shadow p-3 mb-5 bg-white rounded" style="width: 18rem;">
-                    <img class="card-img-top" src="{{asset($blog->image)}}" alt="Card image cap" height="150">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$blog->title}}</h5>
-                        <p class="card-text">{{$blog->description}}</p>
-                        <p>Author: {{$blog->author}}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            @endforeach
+    <div class="container p-4">
+        <div class="card">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">SN</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $i = 0; ?>
+                    @foreach($blogs as $blog)
+                    <tr>
+                        <th>{{++$i}}</th>
+                        <td>{{$blog->title}}</td>
+                        <td>{{$blog->description}}</td>
+                        <td>
+                            <img src="{{asset($blog->image)}}" alt="" width="100">
+                        </td>
+                        <td>{{$blog->author}}</td>
+                        <td>
+                            <a href="/edit/{{$blog->id}}" class="btn btn-primary">Edit</a>
+                            <a href="/delete/{{$blog->id}}" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    @endforeach
+
+                </tbody>
+            </table>
         </div>
     </div>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
