@@ -21,3 +21,8 @@ Route::get('/blog', [BlogController::class, 'index']);
 
 Route::post('/save', [BlogController::class, 'store']);
 
+Route::get('/edit/{id}', [BlogController::class, 'edit']);
+Route::post('/update/{id}', [BlogController::class, 'update']);
+
+
+

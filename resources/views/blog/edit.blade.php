@@ -28,45 +28,39 @@
                         <a class="nav-link" href="/blog">Add Blog</a>
                     </li>
                 </ul>
-               
+
             </div>
         </div>
     </nav>
-    <div class="container p-4">
-        <div class="card">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">SN</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Description</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Author</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php $i = 0; ?>
-                    @foreach($blogs as $blog)
-                    <tr>
-                        <th>{{++$i}}</th>
-                        <td>{{$blog->title}}</td>
-                        <td>{{$blog->description}}</td>
-                        <td>
-                            <img src="{{asset($blog->image)}}" alt="" width="100">
-                        </td>
-                        <td>{{$blog->author}}</td>
-                        <td>
-                            <a href="/edit/{{$blog->id}}" class="btn btn-primary">Edit</a>
-                            <a href="" class="btn btn-danger">Delete</a>
-                        </td>
-                    </tr>
-                    @endforeach
+    <h1>Edit Blog !!</h1>
 
-                </tbody>
-            </table>
+    <form action="/update/{{$blog->id}}" method="post" enctype="multipart/form-data">
+        @csrf
+        <div class="form">
+            <div class="card p-4">
+                <div class="form-control">
+                    <label for="">Title</label>
+                    <input name="title" value="{{$blog->title}}" type="text" class="form-control">
+                </div>
+                <div class="form-control">
+                    <label for="">Description</label>
+                    <textarea name="description" id="" cols="30" rows="10" class="form-control">{{$blog->description}}</textarea>
+                </div>
+                <div class="form-control">
+                    <label for="">Image</label>
+                    <input type="file" name="image" class="form-control">
+                </div>
+                <div class="form-control">
+                    <label for="">Author</label>
+                    <input type="text" name="author" value="{{$blog->author}}" class="form-control">
+                </div>
+                <div class="form-control">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
+            </div>
+
         </div>
-    </div>
+    </form>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
