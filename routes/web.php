@@ -16,18 +16,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [BlogController::class, 'home']);
 
-Route::get('/blog', [BlogController::class, 'index']);
+Auth::routes();
 
-Route::get('/table', [BlogController::class, 'tabel']);
+// group route with auth middleware
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+    Route::get('/blog', [BlogController::class, 'index']);
 
-Route::post('/save', [BlogController::class, 'store']);
-
-Route::get('/edit/{id}', [BlogController::class, 'edit']);
-Route::post('/update/{id}', [BlogController::class, 'update']);
-
-Route::get('/delete/{id}', [BlogController::class, 'destroy']);
+    Route::get('/table', [BlogController::class, 'tabel']);
 
 
+    Route::post('/save', [BlogController::class, 'store']);
 
+    Route::get('/edit/{id}', [BlogController::class, 'edit']);
+    Route::post('/update/{id}', [BlogController::class, 'update']);
 
+    Route::get('/delete/{id}', [BlogController::class, 'destroy']);
+});

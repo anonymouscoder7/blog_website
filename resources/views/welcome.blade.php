@@ -46,7 +46,7 @@
                         <h5 class="card-title">{{$blog->title}}</h5>
                         <p class="card-text">{{$blog->description}}</p>
                         <p>Author: {{$blog->author}}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="#" class="btn btn-primary">Read More</a>
                     </div>
                 </div>
             </div>
